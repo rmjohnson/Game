@@ -1,55 +1,87 @@
+
 import java.applet.*;
 import java.awt.*;
+import java.util.Random;
 
 public class Ball extends Applet implements Runnable
 {
-	int x_pos = 10;
-	int y_pos = 100;
-	int radius = 10;
+	int x_pos = 30;			
+	int y_pos = 100;		
+	int x_speed = 1;		
+	int radius = 20;		
+	int appletsize_x = 300; 
+	int appletsize_y = 300;	
+	Random rnd = new Random();
+
+	private Image dbImage;
+	private Graphics dbg;
+
 	public void init()
 	{
-
+		setBackground (Color.blue);
 	}
-	public void start()
+
+	public void start ()
 	{
 		Thread th = new Thread (this);
-		th.start();
+		th.start ();
 	}
+
 	public void stop()
 	{
 
 	}
+
 	public void destroy()
 	{
 
-	}	
-	public void run()
+	}
+
+	public void run ()
 	{
-		//lower thread priority
 		Thread.currentThread().setPriority(Thread.MIN_PRIORITY);
 
 		while (true)
 		{
+			x_pos = ((rnd.nextInt()) % 50) + 150;
+			y_pos = ((rnd.nextInt()) % 50) + 150;
+
 			repaint();
-			x_pos++;
+
 			try
 			{
-				Thread.sleep(20);
+				Thread.sleep (20);
 			}
 			catch (InterruptedException ex)
 			{
-				//do nothing
+
 			}
 
 			Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
 		}
 	}
-	public void paint(Graphics g)
-	{
-		g.setColor(Color.blue);
 
-		g.fillOval(x_pos - radius, y_pos - radius, 2*radius, 2*radius);
+	public void update (Graphics g)
+	{
+		if (dbImage == null)
+		{
+			dbImage = createImage (this.getSize().width, this.getSize().height);
+			dbg = dbImage.getGraphics ();
+		}
+
+		dbg.setColor (getBackground ());
+		dbg.fillRect (0, 0, this.getSize().width, this.getSize().height);
+
+		dbg.setColor (getForeground());
+		paint (dbg);
+
+		g.drawImage (dbImage, 0, 0, this);
 	}
-	
-	
+
+	public void paint (Graphics g)
+	{
+		g.setColor  (Color.red);
+
+		g.fillOval (x_pos - radius, y_pos - radius, 2 * radius, 2 * radius);
+	}
 }
