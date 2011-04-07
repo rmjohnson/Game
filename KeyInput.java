@@ -1,75 +1,51 @@
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
+import java.lang.*;
+import java.util.Random;
 
-public class KeyInput extends Applet implements KeyListener, MouseListener {
-	int width, height;
-	int x, y;
-	String s = "";
+public class KeyInput extends Applet
+   implements KeyListener, MouseListener {
 
-	public void init()
-	{
-		width = getSize().width;
-		height = getSize().height;
-		setBackground( Color.black );
+   int width, height;
+   int x, y;
+   String s = "";
 
-		x = width/2;
-		y = height/2;
+   public void init() {
+      width = getSize().width;
+      height = getSize().height;
+      setBackground( Color.black );
 
-		addKeyListener ( this );
-		addMouseListener ( this );
+      //Random generator = new Random();
+      //int r = generator.nextInt();
+      x = 5;
+      y = 5;
 
-	}
-	
-	public void keyPressed( KeyEvent e )
-	{
+      addKeyListener( this );
+      addMouseListener( this );
+   }
 
-	}
-	public void keyReleased( KeyEvent e )
-	{
+   public void keyPressed( KeyEvent e ) { }
+   public void keyReleased( KeyEvent e ) { }
+   public void keyTyped( KeyEvent e ) {
+      char c = e.getKeyChar();
+      if ( c != KeyEvent.CHAR_UNDEFINED ) {
+         s = Character.toString(c);
+         repaint();
+         e.consume();
+      }
+   }
 
-	}
-	public void keyTyped( KeyEvent e )
-	{
-		char c = e.getKeyChar();
-		if ( c != KeyEvent.CHAR_UNDEFINED )
-		{
-			s = s +c;
-			repaint();
-			e.consume();
-		}
-	}
-	public void mouseEntered( MouseEvent e )
-	{
+   public void mouseEntered( MouseEvent e ) { }
+   public void mouseExited( MouseEvent e ) { }
+   public void mousePressed( MouseEvent e ) { }
+   public void mouseReleased( MouseEvent e ) { }
+   public void mouseClicked( MouseEvent e ) {
+   }
 
-	}
-	public void mouseExited( MouseEvent e )
-	{
-	
-	}
-	public void mousePressed( MouseEvent e )
-	{
-
-	}
-	public void mouseReleased( MouseEvent e )
-	{
-
-	}
-	public void MouseClicked( MouseEvent e )
-	{
-		x = e.getX();
-		y = e.getY();
-		s = "";
-		repaint();
-		e.consume();
-	}
-
-	public void paint( Graphics g )
-	{
-		g.setColor( Color.gray );
-		g.drawLine( x, y, x, y-10 );
-		g.drawLine ( x, y, x+10, y );
-		g.setColor ( Color.green );
-		g.drawString ( s, x, y );
-	}
+   public void paint( Graphics g ) {
+      g.setColor( Color.red );
+      g.drawString( s, x, y );
+   }
 }
