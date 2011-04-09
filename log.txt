@@ -1,0 +1,4 @@
+KeyInput.java:28: next(int) has protected access in java.util.Random
+			int r = generator.next(100) + 20;
+			                 ^
+1 error
