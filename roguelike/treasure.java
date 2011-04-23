@@ -11,12 +11,12 @@ public class treasure
 	char character;
 	int[] loc = new int[2];
 
-	public treasure (int[] ploc)
+	public treasure (int pwidth, int pheight)
 	{
 		ritem = r.nextInt(3);
 		ramount = r.nextInt(3) + 1;
-		loc[0] = ploc[0];
-		loc[1] = ploc[1];
+		loc[0] = r.nextInt(pwidth) - pwidth/2;
+		loc[1] = r.nextInt(pheight) - pheight/2;
 		switch(ritem)
 		{
 			case 0:

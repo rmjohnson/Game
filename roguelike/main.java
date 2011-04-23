@@ -13,6 +13,9 @@ public class main
 		int[] loc = {0,0};
 		int[] stats = {0,0,0};
 		int points = 10;
+		int width = 50;
+		int height = 15;
+
 		hero ryan = new hero(character, health, mana, gold, loc, stats, points);
 		//ryan.getStatus();
 
@@ -20,20 +23,15 @@ public class main
 		//Treasure Creation///
 		/////////////////////
 
-		int[] tloc1 = {1,1};
-		treasure t1 = new treasure(tloc1);
-		int[] tloc2 = {2,2};
-		treasure t2 = new treasure(tloc2);
-		int[] tloc3 = {0,0};
-		treasure t3 = new treasure(tloc3);
+		treasure t1 = new treasure(width, height);
+		treasure t2 = new treasure(width, height);
+		treasure t3 = new treasure(width, height);
 		treasure[] treasures = {t1,t2,t3};
 
 		////////////////////
 		//Screen creation//
 		//////////////////
 
-		int width = 50;
-		int height = 15;
 		screen gscreen = new screen(width, height);
 		gscreen.updateScreen(ryan, treasures);
 		gscreen.printScreen();
