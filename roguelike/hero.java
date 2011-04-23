@@ -37,9 +37,13 @@ public class hero
 		switch(direction)
 		{
 			case 'u': loc[1]++;
+				  break;
 			case 'd': loc[1]--;
+				  break;
 			case 'l': loc[0]--;
+				  break;
 			case 'r': loc[0]++;
+				  break;
 		}
 	}
 	

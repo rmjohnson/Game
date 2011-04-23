@@ -4,6 +4,7 @@ public class screen
 	String clrscreen;
 	int width;
 	int height;
+	String alert= "";
 	public screen(int pwidth, int pheight)
 	{
 		width = pwidth;
@@ -29,13 +30,33 @@ public class screen
 		clrscreen = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
 	}
-	public void updateScreen(hero character)
+	public void updateScreen(hero character, treasure[] treasures)
 	{
+		for(int i =0;i < treasures.length; i++)
+		{
+			if(treasures[i].loc[0] == character.loc[0] && treasures[i].loc[1] == character.loc[1])
+			{
+				alert = "You picked up: ";
+				alert = alert + treasures[i].ramount;
+				switch(treasures[i].ritem)
+				{
+					case 0: alert = alert + " mana potion(s).";
+						break;
+					case 1: alert = alert + " health potion(s).";
+						break;
+					case 2: alert = alert + " gold.";
+						break;
+				}
+			}
+			screena[(height/2)+1+treasures[i].loc[1]][(width/2)+1+treasures[i].loc[0]] = treasures[i].character;
+		}
 		screena[(height/2)+1+character.loc[1]][(width/2)+1+character.loc[0]] = character.character;
 	}
 	public void printScreen()
 	{
 		System.out.println(clrscreen);	
+		System.out.println(alert);
+		alert = "";
 		for(int i=0; i < height+2; i++)
 		{
 			for(int ii=0; ii< width+2; ii++)

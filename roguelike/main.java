@@ -16,6 +16,17 @@ public class main
 		hero ryan = new hero(character, health, mana, gold, loc, stats, points);
 		//ryan.getStatus();
 
+		///////////////////////
+		//Treasure Creation///
+		/////////////////////
+
+		int[] tloc1 = {1,1};
+		treasure t1 = new treasure(tloc1);
+		int[] tloc2 = {2,2};
+		treasure t2 = new treasure(tloc2);
+		int[] tloc3 = {0,0};
+		treasure t3 = new treasure(tloc3);
+		treasure[] treasures = {t1,t2,t3};
 
 		////////////////////
 		//Screen creation//
@@ -24,7 +35,7 @@ public class main
 		int width = 50;
 		int height = 15;
 		screen gscreen = new screen(width, height);
-		gscreen.updateScreen(ryan);
+		gscreen.updateScreen(ryan, treasures);
 		gscreen.printScreen();
 	}
 }
