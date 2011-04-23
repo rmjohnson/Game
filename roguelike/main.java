@@ -24,6 +24,7 @@ public class main
 		int width = 50;
 		int height = 15;
 		screen gscreen = new screen(width, height);
+		gscreen.updateScreen(ryan);
 		gscreen.printScreen();
 	}
 }

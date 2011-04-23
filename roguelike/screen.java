@@ -1,38 +1,48 @@
 public class screen
 {
-	String strscreen;
+	char[][] screena;
 	String clrscreen;
-	public screen(int width, int height)
+	int width;
+	int height;
+	public screen(int pwidth, int pheight)
 	{
-		strscreen = "";
+		width = pwidth;
+		height = pheight;
+		screena = new char[height+2][width+2];
 		for(int i=0;i< width+2;i++)
 		{
-			strscreen = strscreen + "-";
+			screena[0][i] = '-';
 		}
-		strscreen = strscreen + "\n";
-		for(int i=0; i< height;i++)
+		for(int i=1; i< height+1;i++)
 		{
-			strscreen = strscreen + "|";
-			for (int ii=0; ii<width;ii++)
+			screena[i][0] = '|';
+			for (int ii=1; ii<width;ii++)
 			{
-				strscreen = strscreen + " ";
+				screena[i][ii] = ' ';
 			}
-			strscreen = strscreen + "|\n";
+			screena[i][width+1] = '|';
 		}
 		for(int i=0;i< width+2;i++)
 		{
-			strscreen = strscreen + "-";
+			screena[height+1][i] = '-';
 		}
 		clrscreen = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
 	}
-	public void updateScreen(hero character, treasure[] treasures)
+	public void updateScreen(hero character)
 	{
-		
+		screena[(height/2)+1+character.loc[1]][(width/2)+1+character.loc[0]] = character.character;
 	}
 	public void printScreen()
 	{
 		System.out.println(clrscreen);	
-		System.out.println(strscreen);
+		for(int i=0; i < height+2; i++)
+		{
+			for(int ii=0; ii< width+2; ii++)
+			{
+				System.out.print(screena[i][ii]);
+			}
+			System.out.println();
+		}
 	}
 }
