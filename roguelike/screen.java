@@ -4,7 +4,7 @@ public class screen
 	String clrscreen;
 	int width;
 	int height;
-	String alert= "";
+	String alert;
 	public screen(int pwidth, int pheight)
 	{
 		width = pwidth;
@@ -28,6 +28,7 @@ public class screen
 			screena[height+1][i] = '-';
 		}
 		clrscreen = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+		alert = "";
 
 	}
 	public void updateScreen(hero character, treasure[] treasures)
