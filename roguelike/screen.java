@@ -31,6 +31,35 @@ public class screen
 		alert = "";
 
 	}
+	public char[][] statScreen(hero character)
+	{
+		char[][] statscreen = new char[20][height+2];
+		for(int i=0; i < 20;i++)
+		{
+			statscreen[0][i] = '-';
+		}
+		String healthstatus = "Health: " + character.health;
+		String manastatus = "Mana: " + character.mana;
+		String goldstatus = "Gold: " + character.gold;
+		
+		char[] hstatuschar = new char[healthstatus.length()];
+		char[] mstatuschar = new char[manastatus.length()];
+		char[] gstatuschar = new char[goldstatus.length()];
+
+		healthstatus.getChars(0, healthstatus.length(), hstatuschar, 0);
+		manastatus.getChars(0, manastatus.length(), mstatuschar, 0);
+		goldstatus.getChars(0, goldstatus.length(), gstatuschar, 0);
+
+		System.arraycopy(hstatuschar, 0, statscreen[1], 0, healthstatus.length());
+		System.arraycopy(mstatuschar, 0, statscreen[2], 0, manastatus.length());
+		System.arraycopy(gstatuschar, 0, statscreen[3], 0, goldstatus.length());
+
+		for(int i=0; i < 20; i++)
+		{
+			statscreen[height+1][i] = '-';
+		}
+		return statscreen;
+	}
 	public void updateScreen(hero character, treasure[] treasures)
 	{
 		for(int i =0;i < treasures.length; i++)
@@ -63,7 +92,7 @@ public class screen
 			for(int ii=0; ii< width+2; ii++)
 			{
 				System.out.print(screena[i][ii]);
-			}
+			} 
 			System.out.println();
 		}
 	}
