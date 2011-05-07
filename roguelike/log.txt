@@ -1,0 +1,157 @@
+hero.java:32: illegal start of expression
+		this ('@', 100, 100, 0, {0, 0}, {0, 0 , 0}, 10, 50, 15);
+		                        ^
+hero.java:32: ';' expected
+		this ('@', 100, 100, 0, {0, 0}, {0, 0 , 0}, 10, 50, 15);
+		                         ^
+hero.java:32: illegal start of expression
+		this ('@', 100, 100, 0, {0, 0}, {0, 0 , 0}, 10, 50, 15);
+		                          ^
+hero.java:32: ';' expected
+		this ('@', 100, 100, 0, {0, 0}, {0, 0 , 0}, 10, 50, 15);
+		                           ^
+hero.java:32: illegal start of type
+		this ('@', 100, 100, 0, {0, 0}, {0, 0 , 0}, 10, 50, 15);
+		                              ^
+hero.java:32: ';' expected
+		this ('@', 100, 100, 0, {0, 0}, {0, 0 , 0}, 10, 50, 15);
+		                               ^
+hero.java:32: illegal start of type
+		this ('@', 100, 100, 0, {0, 0}, {0, 0 , 0}, 10, 50, 15);
+		                                 ^
+hero.java:32: <identifier> expected
+		this ('@', 100, 100, 0, {0, 0}, {0, 0 , 0}, 10, 50, 15);
+		                                  ^
+hero.java:32: ';' expected
+		this ('@', 100, 100, 0, {0, 0}, {0, 0 , 0}, 10, 50, 15);
+		                                   ^
+hero.java:32: illegal start of type
+		this ('@', 100, 100, 0, {0, 0}, {0, 0 , 0}, 10, 50, 15);
+		                                      ^
+hero.java:32: <identifier> expected
+		this ('@', 100, 100, 0, {0, 0}, {0, 0 , 0}, 10, 50, 15);
+		                                       ^
+hero.java:32: ';' expected
+		this ('@', 100, 100, 0, {0, 0}, {0, 0 , 0}, 10, 50, 15);
+		                                         ^
+hero.java:32: illegal start of type
+		this ('@', 100, 100, 0, {0, 0}, {0, 0 , 0}, 10, 50, 15);
+		                                          ^
+hero.java:32: <identifier> expected
+		this ('@', 100, 100, 0, {0, 0}, {0, 0 , 0}, 10, 50, 15);
+		                                           ^
+hero.java:32: <identifier> expected
+		this ('@', 100, 100, 0, {0, 0}, {0, 0 , 0}, 10, 50, 15);
+		                                               ^
+hero.java:32: illegal start of type
+		this ('@', 100, 100, 0, {0, 0}, {0, 0 , 0}, 10, 50, 15);
+		                                                  ^
+hero.java:32: <identifier> expected
+		this ('@', 100, 100, 0, {0, 0}, {0, 0 , 0}, 10, 50, 15);
+		                                                   ^
+hero.java:32: ';' expected
+		this ('@', 100, 100, 0, {0, 0}, {0, 0 , 0}, 10, 50, 15);
+		                                                      ^
+hero.java:41: class, interface, or enum expected
+	public void move(char direction)
+	       ^
+hero.java:46: class, interface, or enum expected
+				  break;
+				  ^
+hero.java:47: class, interface, or enum expected
+			case 'd': loc[1]--;
+			^
+hero.java:48: class, interface, or enum expected
+				  break;
+				  ^
+hero.java:49: class, interface, or enum expected
+			case 'l': loc[0]--;
+			^
+hero.java:50: class, interface, or enum expected
+				  break;
+				  ^
+hero.java:51: class, interface, or enum expected
+			case 'r': loc[0]++;
+			^
+hero.java:52: class, interface, or enum expected
+				  break;
+				  ^
+hero.java:53: class, interface, or enum expected
+		}
+		^
+hero.java:57: class, interface, or enum expected
+	public void changeGold(int amount)
+	       ^
+hero.java:60: class, interface, or enum expected
+	}
+	^
+hero.java:63: class, interface, or enum expected
+	public void changeHealth(int amount)
+	       ^
+hero.java:66: class, interface, or enum expected
+	}
+	^
+hero.java:69: class, interface, or enum expected
+	public void changeMana(int amount)
+	       ^
+hero.java:72: class, interface, or enum expected
+	}
+	^
+hero.java:75: class, interface, or enum expected
+	public void changeStats(char stat, int amount)
+	       ^
+hero.java:80: class, interface, or enum expected
+			switch(stat)
+			^
+hero.java:83: class, interface, or enum expected
+				case 'i': i = 1;
+				^
+hero.java:84: class, interface, or enum expected
+				case 'd': i = 2;
+				^
+hero.java:85: class, interface, or enum expected
+			}
+			^
+hero.java:87: class, interface, or enum expected
+			points = points - amount; //Would like to reference the method for changing points here, but I'm unsure how to do that with an object to call
+			^
+hero.java:88: class, interface, or enum expected
+		}
+		^
+hero.java:92: class, interface, or enum expected
+		}
+		^
+hero.java:96: class, interface, or enum expected
+	public void changePoints(int amount)
+	       ^
+hero.java:99: class, interface, or enum expected
+	}
+	^
+hero.java:102: class, interface, or enum expected
+	public void getStatus()
+	       ^
+hero.java:105: class, interface, or enum expected
+		System.out.println(character);
+		^
+hero.java:106: class, interface, or enum expected
+		System.out.print("Health: ");
+		^
+hero.java:107: class, interface, or enum expected
+		System.out.println(health);
+		^
+hero.java:108: class, interface, or enum expected
+		System.out.print("Mana: ");
+		^
+hero.java:109: class, interface, or enum expected
+		System.out.println(mana);
+		^
+hero.java:110: class, interface, or enum expected
+		System.out.print("Gold: ");
+		^
+hero.java:111: class, interface, or enum expected
+		System.out.println(gold);
+		^
+hero.java:112: class, interface, or enum expected
+	}
+	^
+52 errors

@@ -1,14 +1,14 @@
 public class hero
 {
-	public char character; //The character that represents the hero
-	public int health; //Will default to 100 but a second constuctor will be made so the initial health can be changed
-	public int mana; //Same as health
-	public int gold; //Same as health but starts at 0
-	public int hpotions; //Number of health potions
-	public int mpotions; //Number of mana potions
-	public int[] loc = new int[2]; //(x,y) cordinates
-	public int[] stats = new int[3]; //Strength, intellect, dexterity (for now, considering using SPECIAL)
-	public int points; //Extra points to spend on stats
+	char character; //The character that represents the hero
+	int health; //Will default to 100 but a second constuctor will be made so the initial health can be changed
+	int mana; //Same as health
+	int gold; //Same as health but starts at 0
+	int hpotions; //Number of health potions
+	int mpotions; //Number of mana potions
+	int[] loc = new int[2]; //(x,y) cordinates
+	int[] stats = new int[3]; //Strength, intellect, dexterity (for now, considering using SPECIAL)
+	int points; //Extra points to spend on stats
 	
 	
 	/////////////////
@@ -16,15 +16,17 @@ public class hero
 	///////////////
 	
 	//Constructor that sets all variables
-	public hero(char pcharacter, int phealth, int pmana, int pgold, int[] ploc, int[] pstats, int ppoints)
+	public hero(char pcharacter, int phealth, int pmana, int pgold)
 	{
 		character = pcharacter;
 		health = phealth;
 		mana = pmana;
 		gold = pgold;
-		System.arraycopy(ploc,0,loc,0,1);
-		System.arraycopy(pstats,0,loc,0,2);
-		points = ppoints;
+	}
+
+	public hero()
+	{
+		this('@', 100, 100, 0);
 	}
 		
 	////////////
