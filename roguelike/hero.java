@@ -16,17 +16,22 @@ public class hero
 	///////////////
 	
 	//Constructor that sets all variables
-	public hero(char pcharacter, int phealth, int pmana, int pgold)
+	public hero(char pcharacter, int phealth, int pmana, int pgold, int px, int py, int pstr, int pint, int pdex)
 	{
 		character = pcharacter;
 		health = phealth;
 		mana = pmana;
 		gold = pgold;
+		loc[0] = px;
+		loc[1] = py;
+		stats[0] = pstr;
+		stats[1] = pint;
+		stats[2] = pdex;
 	}
 
-	public hero()
+	public hero(int px, int py)
 	{
-		this('@', 100, 100, 0);
+		this('@', 100, 100, 0, px, py, 0, 0, 0);
 	}
 		
 	////////////
@@ -102,9 +107,9 @@ public class hero
 		String mstatus = "Mana: " + mana;
 		String gstatus = "Gold: " + gold;
 
-		hstatus.getChars(0,hstatus.length,status[1],0);
-		mstatus.getChars(0,mstatus.length,status[2],0);
-		gstatus.getChars(0,gstatus.length,status[3],0);
+		//hstatus.getChars(0,hstatus.length,status[1],0);
+		//mstatus.getChars(0,mstatus.length,status[2],0);
+		//gstatus.getChars(0,gstatus.length,status[3],0);
 
 		return status;
 	}

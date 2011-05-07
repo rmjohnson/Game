@@ -1,3 +1,4 @@
+import java.util.Random;
 public class main
 {
 	public static void main(String[] args)
@@ -8,8 +9,12 @@ public class main
 
 		int width = 50;
 		int height = 15;
-
-		hero ryan = new hero();
+		
+		Random r = new Random();
+		int herox = r.nextInt(width) - width/2;
+		int heroy = r.nextInt(height) - height/2;
+		
+		hero ryan = new hero(herox, heroy);
 		//ryan.getStatus();
 
 		///////////////////////
