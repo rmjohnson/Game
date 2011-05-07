@@ -92,17 +92,19 @@ public class hero
 		points = points + amount;
 	}
 	
-	//Prints out all variables
-	public void getStatus()
+	//Returns an array containing all the status information
+	public char[][] getStatus()
 	{
-		System.out.print("Character: ");
-		System.out.println(character);
-		System.out.print("Health: ");
-		System.out.println(health);
-		System.out.print("Mana: ");
-		System.out.println(mana);
-		System.out.print("Gold: ");
-		System.out.println(gold);
+		char[][] status = new char[3][30];
+		String hstatus = "Health: " + health;
+		String mstatus = "Mana: " + mana;
+		String gstatus = "Gold: " + gold;
+
+		hstatus.getChars(0,hstatus.length,status[1],0);
+		mstatus.getChars(0,mstatus.length,status[2],0);
+		gstatus.getChars(0,gstatus.length,status[3],0);
+
+		return status;
 	}
 }
 	
